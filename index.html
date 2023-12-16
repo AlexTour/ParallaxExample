@@ -6,28 +6,35 @@ lang="en">
 
 <head>
 
-    
+  
 <meta
  
 charset="UTF-8">
 
-    
+  
 <meta
  
 name="viewport"
  
 content="width=device-width, initial-scale=1.0">
 
-    
-<title>3D Parallax Effect</title>
-    <link rel="stylesheet" href="style.css">
+  
+<title>3D Animated Loop</title>
 </head>
 <body>
-    <div class="image-container">
-        <img src="photo.jpg" alt="Photo">
-        <img src="depth_map.jpg" alt="Depth map">
-    </div>
+  <div id="loop"></div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
+  <script>
+    const photoUrl = 'image.jpg'; // Replace with the URL of your photo
+    const depthMapUrl = 'depth_map.jpg'; // Replace with the URL of your depth map
+    const loopDuration = 5; // Number of seconds per loop
+
+    const frames = createAnimatedLoop(photoUrl, depthMapUrl, loopDuration);
+
+    for (const frame of frames) {
+      document.getElementById('loop').appendChild(frame);
+    }
+  </script>
 </body>
 </html>
